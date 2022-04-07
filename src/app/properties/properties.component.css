@@ -1,0 +1,10 @@
+.container {
+  position: fixed;
+  height: 100%;
+  background-color: #ffffff;
+  padding-right: 0;
+  margin-right: 0;
+}
+input {
+  width: 100%;
+}
