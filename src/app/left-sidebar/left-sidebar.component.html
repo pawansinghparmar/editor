@@ -139,7 +139,8 @@
         <div class="col sidebar-menu">
             <ul class="col">
                 <li *ngFor="let el of elements">
-                    <a routerLink="/{{el.name}}" [id]=el.name><i [class]=el.icon aria-hidden="true"></i>
+                    <a [id]=el.name [routerLink]="elSelected(el)" (click)="toggle(el)"><i [class]=el.icon
+                            aria-hidden="true"></i>
                         {{el.name}}</a>
                     <!-- <ul *ngIf="el.subelements">
                         <li *ngFor="let subEl of el.subelements">
@@ -147,7 +148,7 @@
                         </li>
                     </ul> -->
 
-                    <select *ngIf=el.subelements [name]=el.name id="">
+                    <select *ngIf=el.subelements [name]=el.name id="" [hidden]="el.status">
                         <option value="" *ngFor="let subEl of el.subelements">{{subEl}}</option>
                     </select>
                 </li>
@@ -156,3 +157,19 @@
         </div>
     </div>
 </div>
+
+
+<!-- <div mdbDropdown class="btn-group dropend">
+    <button type="button" class="btn btn-primary dropdown-toggle" mdbDropdownToggle aria-expanded="false">
+        Dropright
+    </button>
+    <ul mdbDropdownMenu class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li>
+            <hr class="dropdown-divider" />
+        </li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+    </ul>
+</div> -->
