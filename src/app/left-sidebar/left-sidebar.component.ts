@@ -50,7 +50,8 @@ export class LeftSidebarComponent implements OnInit {
     // this.elSelectorService.selectedSubElement(subEl);
   }
   toggle(el: Element) {
+    const tempStatus = el.status;
     this.elements.forEach((el) => el.status = true);
-    el.status = !el.status;
+    el.status = !tempStatus;
   }
 }
